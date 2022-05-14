@@ -1,0 +1,9 @@
+//rgba(59, 73, 223, 1)
+
+.InputSearch {
+  border: none;
+  outline: none;
+  &:focus {
+    border: 1px solid rgba(59, 73, 223, 1);
+  }
+}
