@@ -36,7 +36,7 @@ export const CardPost = () => {
             </div>
           </div>
         </section>
-        <div className="d-flex justify-content-between mt-2 p-4">
+        <div className="d-flex justify-content-between mt-1 p-4">
           <div className="d-flex">
             <ButtonReactions />
             <ButtonComments />
