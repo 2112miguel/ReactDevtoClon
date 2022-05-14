@@ -10,6 +10,7 @@ import { AComponent } from "./components/AComponent.jsx/AComponent";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { ButtonGeneral } from "./components/ButtonGeneral/ButtonGeneral";
 import { CardPost } from "./components/CardPost/CardPost";
+import "bootstrap-icons/font/bootstrap-icons.css";
 
 const ArrayOne = [
   {
@@ -48,10 +49,10 @@ function App() {
   return (
     <div className="">
       <Navbar />
-      <section>
-        <article className="d-flex justify-content-center">
-          <div className="d-flex  align-items-end">
-            <div className="d-flex flex-column align-items-end mx-3">
+      <section className="py-5 ">
+        <article className="d-flex bd-highlight justify-content-center flex-row">
+          <div className="p-2 col-3 col-sm-3 col-lg-3 col-xl-3 col-xxl-3 d-sm-none d-none d-md-block d-lg-block d-xl-block d-xxl-block">
+            <div className="">
               <Cards>
                 <Title />
                 <Paragraphs />
@@ -65,7 +66,7 @@ function App() {
               </List>
             </div>
           </div>
-          <div className="d-flex flex-column w-50">
+          <div className="d-flex flex-column ">
             <div className="d-flex">
               <ButtonGeneral text={"Relevant"} />
               <ButtonGeneral text={"Latest"} />
