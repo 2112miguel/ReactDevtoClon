@@ -9,41 +9,20 @@ import { List } from "../components/List/List";
 import { AComponent } from "../components/AComponent.jsx/AComponent";
 import { ButtonGeneral } from "../components/ButtonGeneral/ButtonGeneral";
 import { CardPost } from "../components/CardPost/CardPost";
-
-const ArrayOne = [
-  {
-    text: "Home",
-  },
-  {
-    text: "Listings",
-  },
-  {
-    text: "Podcast",
-  },
-  {
-    text: "Videos",
-  },
-  {
-    text: "Tags",
-  },
-  {
-    text: "FAQ",
-  },
-  {
-    text: "Forem Shop",
-  },
-  {
-    text: "Sponsors",
-  },
-  {
-    text: "About",
-  },
-  {
-    text: "Contact",
-  },
-];
+import { AppContext } from "../Context/AppContext";
+const URL = "https://devtoclon.herokuapp.com/posts";
 
 export const Home = () => {
+  const context = React.useContext(AppContext);
+  const [Post, setPost] = React.useState([]);
+  React.useEffect(() => {
+    fetch(URL)
+      .then((res) => res.json())
+      .then((body) => {
+        setPost(body.payload);
+      });
+  }, []);
+
   return (
     <div className="">
       <Navbar />
@@ -58,7 +37,7 @@ export const Home = () => {
                 <ButtonLogin />
               </Cards>
               <List>
-                {ArrayOne.map((item) => {
+                {context.state.loadPage.map((item) => {
                   return <AComponent text={item.text} />;
                 })}
               </List>
@@ -71,7 +50,9 @@ export const Home = () => {
               <ButtonGeneral text={"Top"} />
             </div>
             <div>
-              <CardPost />
+              {Post.map((post) => {
+                return <CardPost post={post} />;
+              })}
             </div>
           </div>
           <div className="w-25"></div>
