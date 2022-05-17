@@ -2,12 +2,13 @@ import React from "react";
 import { IconDev } from "../components/IconDev/IconDev";
 import { AppContext } from "../Context/AppContext";
 import "../App.css";
+const URL = "https://devtoclon.herokuapp.com/posts";
 
 export const CreatePost = () => {
   const Context = React.useContext(AppContext);
   const [Post, setPost] = React.useState({
     image: "",
-    idUserPost: "",
+    idUserPost: "627ef688f19aa66b945fc4e0",
     titlePost: "",
     tags: "",
     content: "",
@@ -17,9 +18,27 @@ export const CreatePost = () => {
     timeReadP: "o",
   });
 
-  const handlePost = (e) => {
+  const months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+
+  const HandlePost = (e) => {
     e.preventDefault();
-    console.log("Entra", e.target[3].value);
+    const d = new Date();
+    const month = months[d.getMonth()];
+    const day = d.getUTCDate();
+    const datePost = `${month} ${day}`;
     const image = e.target[0].value;
     const titlePost = e.target[1].value;
     const tags = e.target[2].value;
@@ -30,10 +49,22 @@ export const CreatePost = () => {
       titlePost,
       tags,
       content,
+      datePost,
     });
+    console.log(Post);
+    const postCreate = fetch(URL, {
+      method: "POST",
+      body: JSON.stringify(Post),
+      headers: {
+        "Content-Type": "application/json",
+        token:
+          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjdlZjY4OGYxOWFhNjZiOTQ1ZmM0ZTAiLCJyb2xlIjoiY2xpZW50IiwiaWF0IjoxNjUyODI4NDczLCJleHAiOjE2NTI4MzIwNzN9.eQl-LeBh2enj6a-hUJgwNZWy8zr8h8PAxNR96jxBEcM",
+      },
+    });
+    console.log(postCreate);
   };
 
-  console.log(Post);
+  // console.log(Post);
   return (
     <section className="d-flex px-4 p-2">
       {<IconDev />}
@@ -47,7 +78,7 @@ export const CreatePost = () => {
             <button className="fw-light btn btn-light">Preview</button>
           </div>
         </div>
-        <form onSubmit={handlePost}>
+        <form onSubmit={HandlePost}>
           <div class="px-5 pt-5 bg-white">
             <input
               type="text"
