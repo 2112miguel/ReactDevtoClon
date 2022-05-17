@@ -81,6 +81,35 @@ const ArrayOne = {
       icon: "bi bi-twitch p-2",
     },
   ],
+  Icons: [
+    {
+      icon: "bi bi-type-bold mx-2",
+    },
+    {
+      icon: "bi bi-type-italic mx-2",
+    },
+    {
+      icon: "bi bi-link-45deg mx-2",
+    },
+    {
+      icon: "bi bi-list-ol mx-2",
+    },
+    {
+      icon: "bi bi-list-ul mx-2",
+    },
+    {
+      icon: "bi bi-quote mx-2",
+    },
+    {
+      icon: "bi bi-code mx-2",
+    },
+    {
+      icon: "bi bi-code-square mx-2",
+    },
+    {
+      icon: "bi bi-card-image mx-2",
+    },
+  ],
 };
 
 export const AppProvider = ({ children }) => {

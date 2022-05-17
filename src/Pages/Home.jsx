@@ -11,7 +11,7 @@ import { ButtonGeneral } from "../components/ButtonGeneral/ButtonGeneral";
 import { CardPost } from "../components/CardPost/CardPost";
 import { AppContext } from "../Context/AppContext";
 import { CardMain } from "../components/CardMain/CardMain";
-import { ASecondary } from "../ASecondary/ASecondary";
+
 const URL = "https://devtoclon.herokuapp.com/posts";
 
 export const Home = () => {
@@ -83,9 +83,7 @@ export const Home = () => {
             </div>
           </div>
           <div className="col-3">
-            <CardMain>
-              <ASecondary />
-            </CardMain>
+            <CardMain></CardMain>
           </div>
         </article>
       </section>
