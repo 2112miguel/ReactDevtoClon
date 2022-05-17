@@ -2,6 +2,7 @@ import "./App.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Home } from "./Pages/Home";
+import { Post } from "./Pages/Post";
 import { Routes, Route } from "react-router-dom";
 
 function App() {
@@ -11,7 +12,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/login" />
         <Route path="/createaccount" />
-        <Route path="/post" />
+        <Route path="/post/:id" element={<Post />} />
         <Route path="/createpost" />
         <Route path="/editpost" />
       </Routes>

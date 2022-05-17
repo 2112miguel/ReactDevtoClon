@@ -9,14 +9,23 @@ import { ButtonReactions } from "../ButtonReactions/ButtonReactions";
 import { ButtonComments } from "../ButtomComments/ButtomComments";
 import { LabelTimeRead } from "../LabelTimeRead/LabelTimeRead";
 import { ButtonSave } from "../ButtonSave/ButtonSave";
+import { Link } from "react-router-dom";
 
 export const CardPost = ({ post }) => {
-  console.log(post);
+  const onClick = () => {
+    console.log(post.id);
+  };
+
   return (
-    <div className="bg-white my-3">
+    <div className="bg-white my-3 col-12">
       <article>
-        <section className="p-2 d-flex justify-content-center">
-          <ImgPost link={post.image} />
+        <section>
+          <Link
+            className="p-2 d-flex justify-content-center"
+            to={`/post/${post.id}`}
+          >
+            <ImgPost link={post.image} />
+          </Link>
         </section>
         <section className="d-flex">
           <div>
@@ -29,19 +38,27 @@ export const CardPost = ({ post }) => {
                 <PostDate date={post.datePost} />
               </article>
             </section>
-            <PostTitle text={post.titlePost} />
+            <div>
+              <Link
+                className="text-dark text-decoration-none"
+                to={`/post/${post.id}`}
+              >
+                <PostTitle text={post.titlePost} />
+              </Link>
+            </div>
+
             <div className="d-flex">
               <Tags tags="Tag 1" />
               <Tags tags="Tag 1" />
             </div>
           </div>
         </section>
-        <div className="d-flex justify-content-between mt-1 p-4">
-          <div className="d-flex">
+        <div className="d-flex justify-content-xl-between mt-1 p-4 ">
+          <div className="d-flex justify-content-xxl-between flex-column flex-sm-column flex-xxl-row">
             <ButtonReactions />
             <ButtonComments />
           </div>
-          <div className="d-flex">
+          <div className="d-flex justify-content-xxl-between">
             <LabelTimeRead />
             <ButtonSave />
           </div>

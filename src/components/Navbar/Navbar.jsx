@@ -8,7 +8,7 @@ import "./Navbar.scss";
 
 export const Navbar = () => {
   return (
-    <section className="d-flex mt-2 mx-2 justify-content-around bg-white">
+    <section className="d-flex p-2 my-2 mx-2 justify-content-around bg-white sticky-top">
       <article className="d-flex">
         <IconDev />
         <div class="wrap">
