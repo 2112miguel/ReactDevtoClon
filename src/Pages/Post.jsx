@@ -16,20 +16,30 @@ export const Post = () => {
   const { id } = useParams();
   console.log(id);
   const [Post, setPost] = React.useState();
+  const [Loading, setLoading] = React.useState(true);
   React.useEffect(() => {
     fetch(`${URL}/${id}`)
       .then((res) => res.json())
       .then((body) => {
+        console.log(body);
         setPost(body);
+        setLoading(false);
       });
   }, []);
-  console.log(Post.image);
+  console.log(Post);
   return (
     <div>
       <Navbar />
-      <section className="bg-white">
-        <ImgPost link={Post.image} />
-      </section>
+      {Loading ? (
+        <div class="spinner-border text-primary" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+      ) : (
+        <section className="bg-white">
+          <ImgPost link={Post.image} />
+          <ImgPostAccount link={Post.imageUser} />
+        </section>
+      )}
     </div>
   );
 };
