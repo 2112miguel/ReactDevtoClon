@@ -29,6 +29,7 @@ export const Post = () => {
       <Navbar />
       <section className="bg-white">
         <ImgPost link={Post.image} />
+        <div></div>
       </section>
     </div>
   );
