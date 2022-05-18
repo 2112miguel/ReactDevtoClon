@@ -7,6 +7,8 @@ import { CreatePost } from "./Pages/CreatePost";
 import { Routes, Route } from "react-router-dom";
 import { EditPost } from "./Pages/EditPost";
 import { Account } from "./Pages/Account";
+import { Login } from "./Pages/Login";
+import { Createaccount } from "./Pages/Createaccount";
 import React from "react";
 
 function App() {
@@ -14,8 +16,8 @@ function App() {
     <div>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/login" />
-        <Route path="/createaccount" />
+        <Route path="/login" element={<Login />} />
+        <Route path="/createaccount" element={<Createaccount />} />
         <Route path="/post/:id" element={<Post />} />
         <Route path="/createpost" element={<CreatePost />} />
         <Route path="/editpost/:id" element={<EditPost />} />

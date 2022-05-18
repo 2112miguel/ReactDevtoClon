@@ -112,10 +112,23 @@ const ArrayOne = {
   ],
 };
 
+const userID = {
+  userID: "",
+};
+
 export const AppProvider = ({ children }) => {
   const [state, setState] = useState(ArrayOne);
+  const [user, setUser] = useState(userID);
+
+  const setUserId = (user) => {
+    setUser({
+      userID: user,
+    });
+  };
 
   return (
-    <AppContext.Provider value={{ state }}>{children}</AppContext.Provider>
+    <AppContext.Provider value={{ state, user, setUserId }}>
+      {children}
+    </AppContext.Provider>
   );
 };
