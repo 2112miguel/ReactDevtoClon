@@ -13,8 +13,8 @@ export const Log = ({ children }) => {
           <p id="CreateATitle">Welcome to DEv community </p>
           <p>
             {' '}
-            <Link to="/"> DEV Community</Link> is a community of 846,223
-            amazing developers{' '}
+            <Link to="/"> DEV Community</Link> is a community of 846,223 amazing
+            developers{' '}
           </p>
           <br />
           <BotonesAccount />
