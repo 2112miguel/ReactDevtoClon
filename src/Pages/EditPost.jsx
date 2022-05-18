@@ -24,7 +24,7 @@ export const EditPost = () => {
           titlePost: `${body.titlePost}`,
           tags: `${body.tags}`,
           content: `${body.content}`,
-          idUser: "627ef688f19aa66b945fc4e0",
+          idUser: Context.user.userID,
         });
         setLoading(false);
       });
@@ -43,7 +43,11 @@ export const EditPost = () => {
     }).catch((error) => {
       console.log(error);
     });
-    navigate("/");
+    // navigate("/");
+    postCreate.then((body) => {
+      console.log(body);
+    });
+    console.log(postCreate);
   };
   //console.log(Post);
   return (

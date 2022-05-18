@@ -32,7 +32,20 @@ export const Post = () => {
 
   const del = () => {
     const token = localStorage.getItem(Context.user.userID);
-    console.log("ENTRA BORRAR ", token);
+    //console.log("ENTRA BORRAR ", token);
+    const del = fetch(`${URL}/${id}`, {
+      method: "DELETE",
+      body: JSON.stringify({
+        idUser: Context.user.userID,
+      }),
+      headers: {
+        "Content-Type": "application/json",
+        token: token,
+      },
+    });
+    del.then((body) => {
+      console.log(body);
+    });
   };
 
   return (
@@ -70,15 +83,15 @@ export const Post = () => {
           </div>
           <div className="d-flex justify-content-end">
             <button
-              className="btn btn-primary"
+              className="btn btn-primary mx-2"
               onClick={() => {
                 navigate(`/editpost/${id}`);
               }}
             >
               Edit
             </button>
-            <button type="button" class="btn btn-danger" onClick={del}>
-              Danger
+            <button type="button" class="btn btn-danger mx-2" onClick={del}>
+              Delete
             </button>
           </div>
         </section>

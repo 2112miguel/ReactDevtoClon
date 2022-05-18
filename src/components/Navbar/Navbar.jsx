@@ -24,6 +24,13 @@ export const Navbar = () => {
       </article>
       <article>
         {Context.user.userID === "" ? (
+          <></>
+        ) : (
+          <Link className="btn btn-outline-primary" to="/createpost">
+            Create Post
+          </Link>
+        )}
+        {Context.user.userID === "" ? (
           <ButtonLogin />
         ) : (
           <Link to="/">
