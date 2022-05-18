@@ -23,13 +23,12 @@ export const Post = () => {
         setPost(body);
       });
   }, []);
-  console.log(Post);
+  console.log(Post.image);
   return (
     <div>
       <Navbar />
       <section className="bg-white">
         <ImgPost link={Post.image} />
-        <div></div>
       </section>
     </div>
   );
