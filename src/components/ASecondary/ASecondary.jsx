@@ -5,8 +5,8 @@ export const ASecondary = ({ text, img }) => {
   return (
     <div className="ASecondary">
       <div className="ASecondary-container">
-        {text}
-        <img src={img} alt="" width ="100%X"/>
+        <p>{text}</p>
+        <img src={img} alt="" width="100%" />
       </div>
     </div>
   );

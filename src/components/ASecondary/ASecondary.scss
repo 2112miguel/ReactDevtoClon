@@ -1,23 +1,25 @@
-.ASecondary{
+.ASecondary {
   width: 100%;
   height: auto;
-  background-color: #f8f9fa;
+  background-color: red;
+  //background-color: #f8f9fa;
   display: flex;
-  justify-content:center;
+  justify-content: center;
 }
 
+.ASecondary-container {
+  width: 80%;
+  height: auto;
+  background-color: blue;
 
-
-
-.ASecondary{
-    width: 100%;
-    height: auto;
-    background-color: #f8f9fa;
-    display: flex;
-    justify-content: center;
+  &:hover {
+    background-color: rgb(250, 250, 250, 1);
+    color: rgba(47, 5, 178, 1);
   }
+}
 
-.ASecondary-container {
+/*
+.ASecondary {
     width: 80%;
     height: auto;
     background-color: #fafafa;
@@ -29,5 +31,4 @@
     background-color: hsl(0, 0%, 100%);
       color: rgb(97, 55, 223);
     }
-  }
-  
+  }*/
