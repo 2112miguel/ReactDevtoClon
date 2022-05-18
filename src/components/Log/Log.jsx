@@ -3,6 +3,7 @@ import './Log.scss';
 import { BotonesAccount } from '../BotonesAccount/BotonesAccount';
 import { InputLogin } from '../InputLogin/InputLogin';
 import { CreateAccountButton } from '../CreateAccountButton/CreateAccountButton';
+import { Link } from 'react-router-dom';
 
 export const Log = ({ children }) => {
   return (
@@ -10,7 +11,11 @@ export const Log = ({ children }) => {
       <div className="Login-container">
         <div className="Login-content">
           <p id="CreateATitle">Welcome to DEv community </p>
-          <p>DEV Community is a community of 846,223 amazing developers </p>
+          <p>
+            {' '}
+            <Link to="/"> DEV Community</Link> is a community of 846,223
+            amazing developers{' '}
+          </p>
           <br />
           <BotonesAccount />
           <p className="passwordtext">
