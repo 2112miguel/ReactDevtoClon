@@ -91,7 +91,11 @@ export const Home = () => {
                <ASecondary text ="How to Transition  into an Engineering  leadership group"/>
               <ASecondary text ="Give me your git command"/>
               <ASecondary text ="Commnunity Lead- Remore within Europe  jobs" />
-              
+              <ASecondary text ="Best Coding Interview resources"/>
+              <ASecondary text ="What is your development  philosophy" />
+              <ASecondary text ="What do you know about W-BENform??"/>
+              <ASecondarytext text="Adding headers to  the response  in an Angular application"/>
+
             </CardMain>
           </div>
         </article>
