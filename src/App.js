@@ -5,7 +5,7 @@ import { Home } from './Pages/Home';
 import { Post } from './Pages/Post';
 import { Login } from './Pages/Login';
 import { CreatePost } from './Pages/CreatePost';
-import { Createaccount } from './Pages/CreatePost';
+import { Createaccount } from './Pages/Createaccount';
 import { Routes, Route } from 'react-router-dom';
 import React from 'react';
 
