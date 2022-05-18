@@ -5,6 +5,8 @@ import { Home } from "./Pages/Home";
 import { Post } from "./Pages/Post";
 import { CreatePost } from "./Pages/CreatePost";
 import { Routes, Route } from "react-router-dom";
+import { EditPost } from "./Pages/EditPost";
+import { Account } from "./Pages/Account";
 import React from "react";
 
 function App() {
@@ -16,7 +18,8 @@ function App() {
         <Route path="/createaccount" />
         <Route path="/post/:id" element={<Post />} />
         <Route path="/createpost" element={<CreatePost />} />
-        <Route path="/editpost" />
+        <Route path="/editpost/:id" element={<EditPost />} />
+        <Route path="/account/:id" element={<Account />} />
       </Routes>
     </div>
   );
