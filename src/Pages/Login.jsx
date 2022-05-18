@@ -1,9 +1,10 @@
 import React from 'react';
-import { Log } from '../components/Log';
+import { Log } from '../components/Log/Log';
 
 export const Login = () => {
   return (
     <div>
+      <Log />
       <p>Hola</p>
     </div>
   );
