@@ -87,7 +87,8 @@ export const Home = () => {
             <CardMain>
               <ASecondary img="https://res.cloudinary.com/practicaldev/image/fetch/s--jbMf-P5U--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_350/https://jess.forem.lol/remoteimages/uploads/articles/2hdqak549ex78azbqdk4.png" />
               <ASecondary text="Adding headers to the response in an angular aplication" />
-              <ASecondary text="Do you know MusicAp. It's the best App to get live music" /> 
+              <ASecondary text="Do you know MusicAp. It's the best App to get live music" />
+               
             </CardMain>
           </div>
         </article>
