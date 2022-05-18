@@ -1,5 +1,5 @@
 import React from 'react';
-import { CreateAccountButton } from '../CreateAccountButton/CreateAccountButton';
+import { BotonesCrearCuenta } from '../BotonesCrearCuenta/BotonesCrearCuenta';
 
 export const BotonesAccount = () => {
   const iconsapple = (
@@ -60,22 +60,22 @@ export const BotonesAccount = () => {
     <div className="BotonesAccount">
       <div className="BotonesAccount-container">
         <div className="BotonesAccount-content">
-          <CreateAccountButton
+          <BotonesCrearCuenta
             id="btnapple"
             icon={iconstwitter}
             texto="Sign up with Apple"
           />
-          <CreateAccountButton
+          <BotonesCrearCuenta
             id="btnforem"
             icon={iconforem}
             texto="Sign up with Forem"
           />
-          <CreateAccountButton
+          <BotonesCrearCuenta
             id="btnGithub"
             icon={iconsGithub}
             texto="Sign up with Github"
           />
-          <CreateAccountButton
+          <BotonesCrearCuenta
             id="btnTwitter"
             icon={iconsapple}
             texto="Sign up with Twitter"
