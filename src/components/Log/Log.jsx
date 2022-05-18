@@ -1,5 +1,5 @@
 import React from 'react';
-import './Login.scss';
+import './Log.scss';
 import { BotonesAccount } from '../BotonesAccount/BotonesAccount';
 import { InputLogin } from '../InputLogin/InputLogin';
 import { CreateAccountButton } from '../CreateAccountButton/CreateAccountButton';
