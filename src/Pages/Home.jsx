@@ -95,12 +95,12 @@ export const Home = () => {
               <ASecondary text="Best Coding Interview resources" />
               <ASecondary text="What is your development  philosophy" />
               <ASecondary text="What do you know about W-BENform??" />
-              <ASecondarytext text="Adding headers to  the response  in an Angular application" />
+              <ASecondary text="Adding headers to  the response  in an Angular application" />
               <ASecondary text="Does functional programming  have any advantage  in real environments???" />
-              <ASecondary text ="The word that kill your Dreams"/>
-              <ASecondary text ="10 REact coding challenges"/>
-              <ASecondary text ="Best coding Interview resources" />
-              <ASecondar text  ="What's your current code IDe editor setup??"/>
+              <ASecondary text="The word that kill your Dreams" />
+              <ASecondary text="10 REact coding challenges" />
+              <ASecondary text="Best coding Interview resources" />
+              <ASecondary text="What's your current code IDe editor setup??" />
             </CardMain>
           </div>
         </article>
