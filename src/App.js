@@ -1,10 +1,11 @@
-import "./App.css";
-import "bootstrap-icons/font/bootstrap-icons.css";
-import "bootstrap/dist/css/bootstrap.min.css";
-import { Home } from "./Pages/Home";
-import { Post } from "./Pages/Post";
-import { CreatePost } from "./Pages/CreatePost";
-import { Routes, Route } from "react-router-dom";
+import React from 'react';
+import './App.css';
+import 'bootstrap-icons/font/bootstrap-icons.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Home } from './Pages/Home';
+import { Post } from './Pages/Post';
+import { CreatePost } from './Pages/CreatePost';
+import { Routes, Route } from 'react-router-dom';
 
 function App() {
   return (
