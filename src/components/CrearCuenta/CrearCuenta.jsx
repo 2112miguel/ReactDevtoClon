@@ -11,7 +11,7 @@ export const CrearCuenta = ({ children }) => {
   const handleAccount = (e) => {
     e.preventDefault();
 
-    const createAccount = fetch(URL, {
+    const createAccount = fetch('https://devtoclon.herokuapp.com/users', {
       method: 'POST',
       body: JSON.stringify(user),
       headers: {
@@ -25,6 +25,7 @@ export const CrearCuenta = ({ children }) => {
       .then((body) => {
         console.log(body);
       });
+    console.log(user);
   };
 
   return (
