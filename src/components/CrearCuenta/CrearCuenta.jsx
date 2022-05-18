@@ -66,7 +66,7 @@ export const CrearCuenta = ({ children }) => {
               });
             }}
           />
-          <button onClick={handleAccount}> Create Account </button>
+          <button onClick={handleAccount} className="ContinnueLogin"> Create Account </button>
         </div>
       </div>
     </div>

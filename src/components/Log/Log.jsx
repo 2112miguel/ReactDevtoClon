@@ -74,7 +74,9 @@ export const Log = ({ children }) => {
           <input type="checkbox" />
           <label>&nbsp;Remember me</label>
 
-          <button onClick={handleUser}>Continue</button>
+          <button onClick={handleUser} className="ContinueBoton">
+            Continue
+          </button>
           <p className="passwordtext">I forgot my password</p>
         </div>
       </div>
