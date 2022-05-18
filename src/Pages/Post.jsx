@@ -38,6 +38,7 @@ export const Post = () => {
         <section className="bg-white">
           <ImgPost link={Post.image} />
           <ImgPostAccount link={Post.imageUser} />
+          <PostAutorName text={Post.titlePost} />
         </section>
       )}
     </div>
