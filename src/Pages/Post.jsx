@@ -28,17 +28,38 @@ export const Post = () => {
   }, []);
   console.log(Post);
   return (
-    <div>
+    <div className="d-flex flex-column">
       <Navbar />
       {Loading ? (
         <div class="spinner-border text-primary" role="status">
           <span class="visually-hidden">Loading...</span>
         </div>
       ) : (
-        <section className="bg-white">
-          <ImgPost link={Post.image} />
-          <ImgPostAccount link={Post.imageUser} />
-          <PostAutorName text={Post.titlePost} />
+        <section className="bg-white d-flex flex-column col-lg-8 align-items-center align-self-center">
+          <ImgPost link={Post.image}/>
+          <div className="d-flex mt-3 align-self-start align-items-center mx-3">
+            <ImgPostAccount link={Post.imageUser} />
+            <div className="d-flex flex-column">
+              <PostAutorName name={Post.userId} />
+              <PostDate date={Post.datePost} />
+            </div>
+          </div>
+          <div className="px-5">
+            <PostTitle title={Post.titlePost} />
+            <div className="m-3">
+              <Tags tags={Post.tags} />
+            </div>
+            <div>
+              {Post.content}
+            </div>
+          </div>
+          <div className="d-flex justify-content-between m-3 w-75">
+            <div className="d-flex justify-content-around">
+              <ButtonReactions />
+              <ButtonComments />
+            </div>
+            <LabelTimeRead />
+          </div>
         </section>
       )}
     </div>

@@ -1,10 +1,10 @@
 import React from "react";
 import "./PostAutorName.scss";
 
-export const PostAutorName = ({ text }) => {
+export const PostAutorName = ({ name }) => {
   return (
     <button type="button" class="PostAutorName">
-      {text}
+      {name}
     </button>
   );
 };
