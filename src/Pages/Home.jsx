@@ -1,19 +1,19 @@
-import React from "react";
-import { Navbar } from "../components/Navbar/Navbar";
-import { Cards } from "../components/Cards/Cards";
-import { Paragraphs } from "../components/Paragraphs/Paragraphs";
-import { Title } from "../components/Title/Title";
-import { ButtonLogin } from "../components/ButtonLogIn/ButtonLogin";
-import { CreateAccountButton } from "../components/CreateAccountButton/CreateAccountButton";
-import { List } from "../components/List/List";
-import { AComponent } from "../components/AComponent.jsx/AComponent";
-import { ButtonGeneral } from "../components/ButtonGeneral/ButtonGeneral";
-import { CardPost } from "../components/CardPost/CardPost";
-import { AppContext } from "../Context/AppContext";
-import { CardMain } from "../components/CardMain/CardMain";
-import {ASecondary}  from '../components/ASecondary/ASecondary'
+import React from 'react';
+import { Navbar } from '../components/Navbar/Navbar';
+import { Cards } from '../components/Cards/Cards';
+import { Paragraphs } from '../components/Paragraphs/Paragraphs';
+import { Title } from '../components/Title/Title';
+import { ButtonLogin } from '../components/ButtonLogIn/ButtonLogin';
+import { CreateAccountButton } from '../components/CreateAccountButton/CreateAccountButton';
+import { List } from '../components/List/List';
+import { AComponent } from '../components/AComponent.jsx/AComponent';
+import { ButtonGeneral } from '../components/ButtonGeneral/ButtonGeneral';
+import { CardPost } from '../components/CardPost/CardPost';
+import { AppContext } from '../Context/AppContext';
+import { CardMain } from '../components/CardMain/CardMain';
+import { ASecondary } from '../components/ASecondary/ASecondary';
 
-const URL = "https://devtoclon.herokuapp.com/posts";
+const URL = 'https://devtoclon.herokuapp.com/posts';
 
 export const Home = () => {
   const context = React.useContext(AppContext);
@@ -73,9 +73,9 @@ export const Home = () => {
           </div>
           <div className="d-flex flex-column col-12 col-sm-10 col-lg-8 col-xl-6 col-xxl-6">
             <div className="d-flex">
-              <ButtonGeneral text={"Relevant"} />
-              <ButtonGeneral text={"Latest"} />
-              <ButtonGeneral text={"Top"} />
+              <ButtonGeneral text={'Relevant'} />
+              <ButtonGeneral text={'Latest'} />
+              <ButtonGeneral text={'Top'} />
             </div>
             <div>
               {Post.map((post) => {
@@ -84,8 +84,14 @@ export const Home = () => {
             </div>
           </div>
           <div className="col-3">
-            <CardMain> <ASecondary/></CardMain>
-
+            <CardMain>
+              <ASecondary img="https://res.cloudinary.com/practicaldev/image/fetch/s--jbMf-P5U--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_350/https://jess.forem.lol/remoteimages/uploads/articles/2hdqak549ex78azbqdk4.png" />
+              <ASecondary text="Adding headers to the response in an angular aplication" />
+              <ASecondary />
+              <ASecondary />
+              <ASecondary />
+              <ASecondary />
+            </CardMain>
           </div>
         </article>
       </section>
