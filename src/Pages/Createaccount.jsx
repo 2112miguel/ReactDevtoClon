@@ -1,12 +1,12 @@
 import React from 'react';
-import { Log } from '../components/Log/Log';
-
+import { CrearCuenta } from '../components/CrearCuenta/CrearCuenta';
 import { Navbar } from '../components/Navbar/Navbar';
+
 export const Createaccount = () => {
   return (
-    <div>
+    <div className="Createaccount">
       <Navbar />
-      <Log></Log>
+      <CrearCuenta></CrearCuenta>
     </div>
   );
 };
