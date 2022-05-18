@@ -1,11 +1,12 @@
 import React from 'react';
 import { Log } from '../components/Log/Log';
-
+import { CreateAccountButton } from '../components/CreateAccountButton/CreateAccountButton';
 export const Login = () => {
   return (
     <div>
-      <Log />
-      <p>Hola</p>
+      <Log>
+        <CreateAccountButton texto="Sign up with Apple" />
+      </Log>
     </div>
   );
 };

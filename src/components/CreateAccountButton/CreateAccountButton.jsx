@@ -1,6 +1,11 @@
-import React from "react";
-import "./CreateAccountButton.scss";
+import React from 'react';
+import './CreateAccountButton.scss';
 
-export const CreateAccountButton = () => {
-  return <button className="CreateAccountButton">Create account</button>;
+export const CreateAccountButton = ({ id, icon, texto }) => {
+  return (
+    <button id={id} className="CreateAccountButton">
+      {icon}&nbsp;&nbsp;&nbsp;
+      {texto}
+    </button>
+  );
 };
