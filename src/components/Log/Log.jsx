@@ -1,4 +1,5 @@
 import React from 'react';
+import { Navigate } from 'react-router-dom';
 import './Log.scss';
 import { BotonesAccount } from '../BotonesAccount/BotonesAccount';
 import { InputLogin } from '../InputLogin/InputLogin';
