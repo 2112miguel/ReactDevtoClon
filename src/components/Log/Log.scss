@@ -3,12 +3,12 @@
   justify-content: center;
   background-color: #f5f5f5;
   width: 100%;
-  height: 100vh;
+  height: 100%;
 }
 
 .Login-container {
   width: 40%;
-  height: 680px;
+  height: 750px;
   background-color: #ffffff;
   border-radius: 5px;
   margin-top: 90px;
@@ -28,4 +28,20 @@
 
 .passwordtext {
   text-align: center;
+}
+
+#Email {
+  width: 100%;
+  height: 50px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+#Password {
+  width: 100%;
+  height: 50px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  font-size: 16px;
 }
