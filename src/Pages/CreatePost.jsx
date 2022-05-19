@@ -60,9 +60,9 @@ export const CreatePost = () => {
     postCreate.then((body) => {
       console.log(body);
     });
-    // navigate("/");
+    navigate("/");
   };
-  console.log(token);
+
   return (
     <section className="d-flex px-4 p-2">
       {<IconDev />}

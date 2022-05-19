@@ -12,6 +12,7 @@ import { ButtonComments } from "../components/ButtomComments/ButtomComments";
 import { LabelTimeRead } from "../components/LabelTimeRead/LabelTimeRead";
 import { useNavigate } from "react-router-dom";
 import { AppContext } from "../Context/AppContext";
+import Swal from "sweetalert2";
 
 const URL = "https://devtoclon.herokuapp.com/posts";
 
@@ -31,22 +32,55 @@ export const Post = () => {
   }, []);
 
   const del = () => {
-    const token = localStorage.getItem(Context.user.userID);
-    //console.log("ENTRA BORRAR ", token);
-    const del = fetch(`${URL}/${id}`, {
-      method: "DELETE",
-      body: JSON.stringify({
-        idUser: Context.user.userID,
-      }),
-      headers: {
-        "Content-Type": "application/json",
-        token: token,
+    const swalWithBootstrapButtons = Swal.mixin({
+      customClass: {
+        confirmButton: "btn btn-success",
+        cancelButton: "btn btn-danger",
       },
+      buttonsStyling: false,
     });
-    del.then((body) => {
-      console.log(body);
-    });
-    navigate("/");
+
+    swalWithBootstrapButtons
+      .fire({
+        title: "Are you sure?",
+        text: "You won't be able to revert this!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonText: "Yes, delete it!",
+        cancelButtonText: "No, cancel!",
+        reverseButtons: true,
+      })
+      .then((result) => {
+        if (result.isConfirmed) {
+          const token = localStorage.getItem(Context.user.userID);
+          const del = fetch(`${URL}/${id}`, {
+            method: "DELETE",
+            body: JSON.stringify({
+              idUser: Context.user.userID,
+            }),
+            headers: {
+              "Content-Type": "application/json",
+              token: token,
+            },
+          });
+          navigate("/");
+
+          swalWithBootstrapButtons.fire(
+            "Deleted!",
+            "Your file has been deleted.",
+            "success"
+          );
+        } else if (
+          /* Read more about handling dismissals below */
+          result.dismiss === Swal.DismissReason.cancel
+        ) {
+          swalWithBootstrapButtons.fire(
+            "Cancelled",
+            "Your imaginary file is safe :)",
+            "error"
+          );
+        }
+      });
   };
 
   return (
