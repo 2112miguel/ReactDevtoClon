@@ -11,7 +11,7 @@ export const CreatePost = () => {
   const navigate = useNavigate();
   const [Post, setPost] = React.useState({
     image: "",
-    idUserPost: "627ef688f19aa66b945fc4e0",
+    idUserPost: Context.user.userID,
     titlePost: "",
     tags: "",
     content: "",
@@ -56,7 +56,11 @@ export const CreatePost = () => {
         token: token,
       },
     });
-    navigate("/");
+    console.log(postCreate);
+    postCreate.then((body) => {
+      console.log(body);
+    });
+    // navigate("/");
   };
   console.log(token);
   return (

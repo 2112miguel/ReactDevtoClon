@@ -46,6 +46,7 @@ export const Post = () => {
     del.then((body) => {
       console.log(body);
     });
+    navigate("/");
   };
 
   return (

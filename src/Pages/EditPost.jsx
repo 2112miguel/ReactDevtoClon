@@ -43,11 +43,9 @@ export const EditPost = () => {
     }).catch((error) => {
       console.log(error);
     });
-    // navigate("/");
-    postCreate.then((body) => {
-      console.log(body);
-    });
-    console.log(postCreate);
+    navigate("/");
+
+    //console.log(postCreate);
   };
   //console.log(Post);
   return (
