@@ -2,13 +2,16 @@ import React from "react";
 import { IconDev } from "../components/IconDev/IconDev";
 import { AppContext } from "../Context/AppContext";
 import "../App.css";
+import { useNavigate } from "react-router-dom";
 const URL = "https://devtoclon.herokuapp.com/posts";
 
 export const CreatePost = () => {
   const Context = React.useContext(AppContext);
+  const token = localStorage.getItem(Context.user.userID);
+  const navigate = useNavigate();
   const [Post, setPost] = React.useState({
     image: "",
-    idUserPost: "627ef688f19aa66b945fc4e0",
+    idUserPost: Context.user.userID,
     titlePost: "",
     tags: "",
     content: "",
@@ -44,19 +47,22 @@ export const CreatePost = () => {
       ...Post,
       datePost,
     });
-    console.log(Post);
+
     const postCreate = fetch(URL, {
       method: "POST",
       body: JSON.stringify(Post),
       headers: {
         "Content-Type": "application/json",
-        token:
-          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjdlZjY4OGYxOWFhNjZiOTQ1ZmM0ZTAiLCJyb2xlIjoiY2xpZW50IiwiaWF0IjoxNjUyODMzMDQzLCJleHAiOjE2NTI4MzY2NDN9.Jt7Vuthkf8z9HPGGlB30z6Dcbvj5I_XxISYMVXdSiLc",
+        token: token,
       },
     });
     console.log(postCreate);
+    postCreate.then((body) => {
+      console.log(body);
+    });
+    // navigate("/");
   };
-
+  console.log(token);
   return (
     <section className="d-flex px-4 p-2">
       {<IconDev />}

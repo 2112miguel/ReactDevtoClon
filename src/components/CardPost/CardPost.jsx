@@ -12,10 +12,6 @@ import { ButtonSave } from "../ButtonSave/ButtonSave";
 import { Link } from "react-router-dom";
 
 export const CardPost = ({ post }) => {
-  const onClick = () => {
-    console.log(post.id);
-  };
-
   return (
     <div className="bg-white my-3 col-12">
       <article>
@@ -34,7 +30,7 @@ export const CardPost = ({ post }) => {
           <div className="d-flex flex-column align-items-start">
             <section>
               <article className="d-flex flex-column">
-                <PostAutorName text={post.userId} />
+                <PostAutorName name={post.userId} />
                 <PostDate date={post.datePost} />
               </article>
             </section>
@@ -43,7 +39,7 @@ export const CardPost = ({ post }) => {
                 className="text-dark text-decoration-none"
                 to={`/post/${post.id}`}
               >
-                <PostTitle text={post.titlePost} />
+                <PostTitle title={post.titlePost} />
               </Link>
             </div>
 
