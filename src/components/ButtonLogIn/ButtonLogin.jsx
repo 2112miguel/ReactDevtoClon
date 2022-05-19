@@ -1,12 +1,12 @@
-import React from "react";
-import "./ButtonLogin.scss";
-
+import React from 'react';
+import './ButtonLogin.scss';
+import { Link } from 'react-router-dom';
 export const ButtonLogin = () => {
   return (
     <>
-      <a href="" className="ButtonLogin">
+      <Link to="/Login" className="ButtonLogin">
         Log In
-      </a>
+      </Link>
     </>
   );
 };

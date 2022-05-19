@@ -2,6 +2,7 @@ import React from "react";
 import { IconDev } from "../components/IconDev/IconDev";
 import { AppContext } from "../Context/AppContext";
 import { useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "../App.css";
 const URL = "https://devtoclon.herokuapp.com";
 
@@ -10,10 +11,11 @@ export const EditPost = () => {
   const Context = React.useContext(AppContext);
   const [Post, setPost] = React.useState(null);
   const [Loading, setLoading] = React.useState(true);
+  const token = localStorage.getItem(Context.user.userID);
+  const navigate = useNavigate();
 
   React.useEffect(() => {
     const apiUrl = `${URL}/posts/${id}`;
-    console.log(apiUrl);
     fetch(apiUrl)
       .then((res) => res.json())
       .then((body) => {
@@ -22,7 +24,7 @@ export const EditPost = () => {
           titlePost: `${body.titlePost}`,
           tags: `${body.tags}`,
           content: `${body.content}`,
-          idUser: "627ef688f19aa66b945fc4e0",
+          idUser: Context.user.userID,
         });
         setLoading(false);
       });
@@ -31,20 +33,21 @@ export const EditPost = () => {
   const HandlePost = (e) => {
     e.preventDefault();
     const apiUrl = `${URL}/posts/${id}`;
-    console.log(Post);
     const postCreate = fetch(apiUrl, {
       method: "PATCH",
       body: JSON.stringify(Post),
       headers: {
         "Content-Type": "application/json",
-        token:
-          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjdlZjY4OGYxOWFhNjZiOTQ1ZmM0ZTAiLCJyb2xlIjoiY2xpZW50IiwiaWF0IjoxNjUyODQ0OTA4LCJleHAiOjE2NTI4NDg1MDh9.uMZ0MgzNYhTRSo-GYrpP3P79xpeTzy1N04UNAL5bnvs",
+        token: token,
       },
     }).catch((error) => {
       console.log(error);
     });
+    navigate("/");
+
+    //console.log(postCreate);
   };
-  console.log(Post);
+  //console.log(Post);
   return (
     <section className="d-flex px-4 p-2">
       {<IconDev />}

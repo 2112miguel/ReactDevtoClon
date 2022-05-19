@@ -1,6 +1,11 @@
-import React from "react";
-import "./CreateAccountButton.scss";
+import React from 'react';
+import './CreateAccountButton.scss';
+import { Link } from 'react-router-dom';
 
 export const CreateAccountButton = () => {
-  return <button className="CreateAccountButton">Create account</button>;
+  return (
+    <Link to="/createaccount">
+      <button className="CreateAccountButton">Create account</button>
+    </Link>
+  );
 };
