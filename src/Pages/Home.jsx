@@ -13,7 +13,8 @@ import { AppContext } from "../Context/AppContext";
 import { CardMain } from "../components/CardMain/CardMain";
 import { ASecondary } from "../components/ASecondary/ASecondary";
 
-const URL = "https://devtoclon.herokuapp.com/posts";
+
+const URL = 'https://devtoclon.herokuapp.com/posts';
 
 export const Home = () => {
   const context = React.useContext(AppContext);
@@ -73,9 +74,9 @@ export const Home = () => {
           </div>
           <div className="d-flex flex-column col-12 col-sm-10 col-lg-8 col-xl-6 col-xxl-6">
             <div className="d-flex">
-              <ButtonGeneral text={"Relevant"} />
-              <ButtonGeneral text={"Latest"} />
-              <ButtonGeneral text={"Top"} />
+              <ButtonGeneral text={'Relevant'} />
+              <ButtonGeneral text={'Latest'} />
+              <ButtonGeneral text={'Top'} />
             </div>
             <div>
               {Post.map((post) => {
@@ -83,7 +84,30 @@ export const Home = () => {
               })}
             </div>
           </div>
+
+          <div className="col-3">
+            <CardMain>
+              <ASecondary img="https://res.cloudinary.com/practicaldev/image/fetch/s--jbMf-P5U--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_350/https://jess.forem.lol/remoteimages/uploads/articles/2hdqak549ex78azbqdk4.png" />
+              <ASecondary text="Adding headers to the response in an angular aplication" />
+              <ASecondary text="Do you know MusicAp. It's the best App to get live music" />
+               
+              <ASecondary text="How to Transition  into an Engineering  leadership group" />
+              <ASecondary text="Give me your git command" />
+              <ASecondary text="Commnunity Lead- Remore within Europe  jobs" />
+              <ASecondary text="Best Coding Interview resources" />
+              <ASecondary text="What is your development  philosophy" />
+              <ASecondary text="What do you know about W-BENform??" />
+              <ASecondary text="Adding headers to  the response  in an Angular application" />
+              <ASecondary text="Does functional programming  have any advantage  in real environments???" />
+              <ASecondary text="The word that kill your Dreams" />
+              <ASecondary text="10 REact coding challenges" />
+              <ASecondary text="Best coding Interview resources" />
+              <ASecondary text="What's your current code IDe editor setup??" />
+            </CardMain>
+          </div>
+
           <div className="col-3"></div>
+
         </article>
       </section>
     </div>

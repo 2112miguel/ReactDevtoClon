@@ -74,7 +74,6 @@ export const Log = ({ children }) => {
 
           <input type="checkbox" />
           <label>&nbsp;Remember me</label>
-
           <button className="btn btn-primary mx-3" onClick={handleUser}>
             Continue
           </button>
